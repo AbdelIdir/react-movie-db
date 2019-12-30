@@ -21,14 +21,17 @@ export const useHomeFetch = () => {
             ? [...prev.movies, ...result.results]
             : [...result.results],
         heroImage: prev.heroImage || result.results[0],
+        currentPage: result.page,
         totalPages: result.total_pages
       }));
     } catch (error) {
       setError(true);
+      console.log(error);
     }
-
     setLoading(false);
   };
+
+  // Fetch popular movies initially on mount
   useEffect(() => {
     fetchMovies(`${API_URL}movie/popular?api_key=${API_KEY}`);
   }, []);
