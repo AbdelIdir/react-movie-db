@@ -2,7 +2,7 @@ import React from "react";
 import RMDBLogo from "../images/reactMovie_logo.png";
 import TMDBLogo from "../images/tmdb_logo.svg";
 // import styled from "styled-components";
-
+import { Link } from "@reach/router";
 import {
   StyledHeader,
   StyledRMDBLogo,
@@ -10,9 +10,8 @@ import {
 } from "../styles/StyledHeader";
 
 const Header = props => {
-
-    ////////// We are not going to make the styles in this file, this is just an example.
-    //////////Instead we create them in a style folder and import them in here for a cleaner component.
+  ////////// We are not going to make the styles in this file, this is just an example.
+  //////////Instead we create them in a style folder and import them in here for a cleaner component.
   //   const StyledHeader = styled.div`
   //     background: #1c1c1c;
   //     padding: 0 20px;
@@ -50,7 +49,9 @@ const Header = props => {
   return (
     <StyledHeader>
       <div className="header-content">
-        <StyledRMDBLogo src={RMDBLogo} alt="rmdb-logo" />
+        <Link to="/">
+          <StyledRMDBLogo src={RMDBLogo} alt="rmdb-logo" />
+        </Link>
         <StyledTMDBLogo src={TMDBLogo} alt="tmdb-logo" />
       </div>
     </StyledHeader>
