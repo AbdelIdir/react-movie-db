@@ -18,11 +18,17 @@ const Movie = ({ movieId }) => {
 
   return (
     <>
-      <Navigation movie={movie.original} />
+      <Navigation movie={movie.title} />
       <MovieInfo movie={movie} />
-      <MovieInfoBar />
-      <Grid>
-        <Actor />
+      <MovieInfoBar
+        time={movie.runtime}
+        budget={movie.budget}
+        revenue={movie.revenue}
+      />
+      <Grid header="Actors">
+        {movie.actors.map(actor => (
+          <Actor key={actor.credit_id} actor={actor} />
+        ))}
       </Grid>
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 import { StyledSpinner } from "../styles/StyledSpinner";
 // const StyledSpinner = styled.div`
 // border: 5px solid #f3f3f3;
